@@ -284,7 +284,7 @@ require('lazy').setup({
     },
   },
 
-  { --
+  { -- Smear Cursor visual effect
     'sphamba/smear-cursor.nvim',
     opts = {
       -- Smear cursor when switching buffers or windows.
@@ -304,6 +304,13 @@ require('lazy').setup({
       -- Smear cursor in insert mode.
       -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
       smear_insert_mode = true,
+    },
+  },
+
+  { -- Smooth scrolling visual effect
+    'karb94/neoscroll.nvim',
+    opts = {
+      duration_multiplier = 0.3,
     },
   },
 
