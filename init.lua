@@ -232,7 +232,16 @@ end
 
 ---@type vim.Option
 local rtp = vim.opt.rtp
+
 rtp:prepend(lazypath)
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.expandtab = true
+  end,
+})
 
 -- [[ Configure and install plugins ]]
 --
@@ -1018,7 +1027,7 @@ require('lazy').setup({
   require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.neo-tree',
+  -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   {
     'stevearc/oil.nvim',
