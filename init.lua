@@ -1068,6 +1068,21 @@ require('lazy').setup({
     lazy = false,
   },
 
+  {
+    'NvChad/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup {
+        filetypes = { '*' }, -- Enable for all filetypes
+        user_default_options = {
+          RGB = true, -- #RGB hex codes
+          RRGGBB = true, -- #RRGGBB hex codes
+          names = true, -- "blue", "red", etc.
+          mode = 'background', -- Set display mode
+        },
+      }
+    end,
+  },
+
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
