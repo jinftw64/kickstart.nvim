@@ -961,6 +961,7 @@ require('lazy').setup({
           light = 'latte',
           dark = 'mocha',
         },
+        transparent_background = true,
         integrations = {
           cmp = true,
           gitsigns = true,
